@@ -1,0 +1,26 @@
+Vladimir Makeev, [01.07.2022 15:22]
+#include <QApplication>
+#include <QDesktopWidget>
+#include <QFileSystemModel>
+#include <QFileIconProvider>
+#include <QTreeView>
+#include <QCommandLineParser>
+#include <QCommandLineOption>
+
+
+#include <QtGui>
+#include <QFileSystemModel>
+
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    QFileSystemModel *model = new QFileSystemModel;
+    QString dir(QDir::homePath());
+    model->setRootPath(dir);
+    QTreeView *tree = new QTreeView();
+    tree->setModel(model);
+    tree->setRootIndex(model->index((dir)));
+    tree->show();
+    return a.exec();
+
+}
