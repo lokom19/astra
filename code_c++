@@ -1,4 +1,3 @@
-Vladimir Makeev, [01.07.2022 15:22]
 #include <QApplication>
 #include <QDesktopWidget>
 #include <QFileSystemModel>
